@@ -1,8 +1,13 @@
-/* Global Rules */
+:root {
+  --RepeatedColor: #10cab7;
+  --SecondaryColor: #2c4755;
+  --RepeatedPadding: 60px;
+}
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
 }
 
 body {
@@ -19,18 +24,6 @@ html {
   margin-left: auto;
   margin: auto;
 }
-
-/* End Of Global Rules */
-
-/* start variables */
-
-:root {
-  --RepeatedColor: #10cab7;
-  --RepeatedPadding: 60px;
-  --SecondaryColor: #2c4755;
-}
-
-/* end variables */
 
 /* start components */
 .special-heading {
@@ -408,6 +401,12 @@ header .links ul li:not(:last-child) a {
   z-index: -1;
 }
 
+@media screen and (width < 767px) {
+  .about .image::after {
+    display: none;
+  }
+}
+
 .about .texts {
   flex: 1;
   padding-left: 250px;
@@ -451,6 +450,8 @@ header .links ul li:not(:last-child) a {
 .contact .texts .social {
   display: inline-flex;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .contact .texts .social p {
@@ -459,8 +460,8 @@ header .links ul li:not(:last-child) a {
 
 .contact .texts .social i {
   padding: 5px;
-  margin-top: 19px;
   color: #2c4755;
+  cursor: pointer;
 }
 
 .contact .texts .label {
@@ -469,6 +470,7 @@ header .links ul li:not(:last-child) a {
   color: #2c4755;
   font-size: 40px;
   letter-spacing: -3px;
+  margin-bottom: 40px;
 }
 
 .contact .texts a {
