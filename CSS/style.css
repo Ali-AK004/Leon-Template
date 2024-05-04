@@ -4,6 +4,19 @@
   --RepeatedPadding: 60px;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--RepeatedColor);
+  border-radius: 6px;
+}
+
 * {
   margin: 0;
   padding: 0;
