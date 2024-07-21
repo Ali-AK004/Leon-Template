@@ -471,7 +471,11 @@ header .links ul li:not(:last-child) a {
   font-size: 20px;
 }
 
-.contact .texts .social i {
+.contact .texts .social a {
+  font-size: 20px;
+}
+
+.contact .texts .social a i {
   padding: 5px;
   color: #2c4755;
   cursor: pointer;
