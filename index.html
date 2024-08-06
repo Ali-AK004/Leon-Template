@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/Normalize.css" />
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,25 +13,25 @@
     <link rel="stylesheet" href="CSS/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="Images/Icon.png" type="image/x-icon" />
-    <title>Leon Template | Welcome</title>
+    <title>Leon Template | AliPorg</title>
   </head>
   <body>
     <header>
       <div class="container">
         <img src="Images/Logo.png" class="logo" />
-        <div class="links">
-          <span class="icon">
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#Portfolio">Portfolio</a></li>
-              <li><a href="#About">About</a></li>
-              <li><a href="#Contact">Contact</a></li>
-            </ul>
-          </span>
-        </div>
+
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#Portfolio">Portfolio</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+
+        <span class="icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </div>
     </header>
     <section class="landing">
@@ -68,7 +67,7 @@
         </div>
       </div>
     </section>
-    <section class="services" id="services">
+    <section class="services check-active" id="services">
       <div class="container">
         <h2 class="special-heading">Services</h2>
         <p>Don't Be Busy , Be Productive</p>
@@ -129,19 +128,23 @@
           </div>
           <div class="col">
             <div class="image image-column">
-              <img src="../Images/Services.jpg" />
+              <img
+                src="https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="portfolio" id="Portfolio">
+    <section class="portfolio check-active" id="Portfolio">
       <div class="container">
         <div class="special-heading">Portfolio</div>
         <p>If You Do It Right , It Will Last Forever</p>
         <div class="main-container">
           <div class="port-container">
-            <img src="Images/portfolio-1.jpg" />
+            <img
+              src="https://images.pexels.com/photos/225502/pexels-photo-225502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
             <div class="texts">
               <h3>Project Here</h3>
               <p>
@@ -151,7 +154,9 @@
             </div>
           </div>
           <div class="port-container">
-            <img src="Images/portfolio-2.jpg" />
+            <img
+              src="https://images.pexels.com/photos/1422292/pexels-photo-1422292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
             <div class="texts">
               <h3>Project Here</h3>
               <p>
@@ -161,7 +166,9 @@
             </div>
           </div>
           <div class="port-container">
-            <img src="Images/portfolio-3.jpg" />
+            <img
+              src="https://images.pexels.com/photos/261599/pexels-photo-261599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
             <div class="texts">
               <h3>Project Here</h3>
               <p>
@@ -173,13 +180,15 @@
         </div>
       </div>
     </section>
-    <section class="about" id="About">
+    <section class="about check-active" id="About">
       <div class="container">
         <div class="special-heading">About</div>
         <p>Less Is More Work</p>
         <div class="main-container">
           <div class="image">
-            <img src="Images/About.jpg" />
+            <img
+              src="https://images.pexels.com/photos/128187/pexels-photo-128187.jpeg?auto=compress&cs=tinysrgb&w=400"
+            />
           </div>
           <div class="texts">
             <p>
@@ -199,12 +208,12 @@
         </div>
       </div>
     </section>
-    <section class="contact" id="Contact">
+    <section class="contact check-active" id="Contact">
       <div class="container">
         <div class="special-heading">Contact</div>
         <p>We Are Born To Create</p>
         <div class="texts">
-          <p class="label">Feel Free To Drop Us A line at :</p>
+          <p class="label">Feel Free To Drop Us A line at:</p>
           <a href="mailto:leonagency@mail.com?subject=Contact"
             >leonagency@mail.com</a
           >
@@ -232,6 +241,14 @@
         </p>
       </div>
     </footer>
+    <button class="scroll-to-top">
+      <img
+        width="25"
+        height="25"
+        src="https://img.icons8.com/ios-glyphs/90/up--v1.png"
+        alt="up--v1"
+      />
+    </button>
     <script src="script.js"></script>
   </body>
 </html>

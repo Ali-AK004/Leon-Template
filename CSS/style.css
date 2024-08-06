@@ -21,6 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-padding-top: 50px;
 }
 
 body {
@@ -29,6 +30,29 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+.scroll-to-top {
+  position: fixed;
+  width: fit-content;
+  right: 20px;
+  bottom: 20px;
+  float: right;
+  border: none;
+  outline: none;
+  background-color: var(--RepeatedColor);
+  padding: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  transform: scale(0);
+}
+
+.scroll-to-top.shown {
+  transform: scale(1);
+}
+
+.scroll-to-top:hover {
+  border-radius: 50%;
 }
 
 .container {
@@ -68,6 +92,11 @@ html {
 /* Start Of Header */
 header {
   padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 header .container {
@@ -81,70 +110,47 @@ header .logo {
   cursor: pointer;
 }
 
-header .links {
-  position: relative;
-}
-
-header .links:hover .icon span:nth-child(2) {
+header .container.openMenu .icon span:nth-child(2) {
   width: 100%;
 }
 
-header .links .icon {
+header .icon {
+  position: relative;
+  cursor: pointer;
   width: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
-header .links .icon span {
+@media screen and (min-width: 768px) {
+  header .icon {
+    display: none;
+  }
+}
+
+header .icon span {
   background-color: #333;
   margin-bottom: 5px;
 }
 
-header .links .icon span:first-child {
+header .icon span:first-child {
   width: 100%;
   height: 2px;
 }
 
-header .links .icon span:nth-child(2) {
+header .icon span:nth-child(2) {
   width: 60%;
   height: 2px;
   transition: width 0.3s ease;
 }
 
-header .links .icon span:nth-child(3) {
+header .icon span:nth-child(3) {
   width: 100%;
   height: 2px;
 }
 
-header .links ul {
-  list-style-type: none;
-  right: 0;
-  position: absolute;
-  margin: 0;
-  padding: 0;
-  background-color: #f6f6f6;
-  min-width: 200px;
-  top: calc(100% + 15px);
-  display: none;
-  z-index: 1;
-}
-
-header .links:hover ul {
-  display: block;
-}
-header .links ul::after {
-  content: "";
-  border: 10px solid;
-  border-color: transparent transparent #f6f6f6 transparent;
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: -20px;
-  right: 10px;
-}
-
-header .links ul a {
+header .container ul a {
   padding: 15px;
   display: block;
   text-decoration: none;
@@ -152,21 +158,80 @@ header .links ul a {
   transition: 0.3s ease;
 }
 
-header .links ul a:hover {
-  padding-left: 25px;
+header .container ul a.active,
+header .container ul a:hover {
+  font-weight: bold;
 }
-header .links ul li:not(:last-child) a {
-  border-bottom: 1px solid #ddd;
+
+header .container > ul {
+  display: flex;
+  list-style-type: none;
+}
+
+header .container > ul a {
+  padding: 15px;
+  display: block;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s ease;
+}
+
+header .container > ul li a:hover,
+header .container > ul li a.active {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  header .container ul {
+    list-style-type: none;
+    right: 30px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    display: none;
+    z-index: 1;
+  }
+
+  header .container.openMenu ul {
+    display: block;
+  }
+
+  header .container ul::after {
+    content: "";
+    border: 10px solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -20px;
+    right: 10px;
+  }
+
+  header .container ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+  }
 }
 /* End Of Header */
 
 /* start of landing section */
 .landing {
-  background-image: url(../Images/Wallpaper.jpg);
+  background-image: url("https://images.pexels.com/photos/808465/pexels-photo-808465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-size: cover;
   background-repeat: no-repeat;
   height: calc(100vh - 80.42px);
   position: relative;
+}
+
+.landing::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .intro-text {
@@ -464,6 +529,7 @@ header .links ul li:not(:last-child) a {
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
@@ -504,9 +570,8 @@ header .links ul li:not(:last-child) a {
   .contact .texts a {
     font-size: 30px;
   }
-
-  .contact .texts a {
-    margin-top: 3px;
+  .contact .texts .social {
+    justify-content: center;
   }
 }
 
